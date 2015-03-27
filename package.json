@@ -1,0 +1,12 @@
+{
+  "private": true,
+  "name": "svgasset-build",
+  "version": "0.1.0-alpha",
+  "dependencies": {
+    "glob": "^5.0.3",
+    "sax": "^0.6.1"
+  },
+  "bin": {
+    "svgasset-build": "./bin/cli.js"
+  }
+}
