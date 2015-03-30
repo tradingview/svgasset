@@ -2,7 +2,7 @@
   "name": "svgasset",
   "version": "0.1.0-alpha.1",
   "description": "Client side inline SVG library and backend building tool",
-  "author": "MultiCharts",
+  "author": "TradingView <admin@tradingview.com>",
   "license": "MIT",
   "dependencies": {
     "glob": "^5.0.3",
