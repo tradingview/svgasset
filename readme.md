@@ -10,10 +10,12 @@ Include `browser/svgasset.svg` somewhere in the page. `SvgAsset` function appear
 
 Calling `SvgAsset()` return a SVG DOM element that can be used in any way you want.
 
-The signature is `SVGAsset(/* str */ assetName, /* object */ options)`.
+The signature is `SVGAsset(/* str */ assetName, /* optional object or str */ attrs)`.
 
 -	`assetName` is a name of the SVG asset;
--	`options` is a options dictionary. Unused at the moment.
+
+-	`attrs` (optional) is a dictionary of attributes to set to element.
+	If it's a string in format "_width_ x _height_"`, it's the same as providing `{"width": ..., "height": ...}`.
 
 But first you have to declare the assets themselves.
 It is done with `SvgAsset.register(/* object */ assets)`
@@ -29,14 +31,14 @@ But you don't need to do it manually, there's a builder for that.
 
 Builder can be used in Node.js as a module. The `require` result is a function with following signature:
 
-`require('svgasset')(/* array of str */ filenames, /* object */ options)`
+`require('svgasset')(/* array of str */ filenames, /* optional object */ options)`
 
 -	`filenames` are filenames of SVG files to be included into dictionary. No magic wildcards are used here.
 	Relative filenames will be resolved from currect directory (`process.cwd()`, not `__dirname`!).
 
--	`options.writeBefore` is a string or Buffer to be written before the dictionary.
+-	`options.writeBefore` (optional) is a string or Buffer to be written before the dictionary.
 
--   `options.writeAfter` is similar to `writeBefore`.
+-   `options.writeAfter` (optional) is similar to `writeBefore`.
 
 #### Return value
 
