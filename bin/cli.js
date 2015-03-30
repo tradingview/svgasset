@@ -88,18 +88,18 @@ function unwrap(filenames, dirname){
 			result.push.apply(result, globbed);
 		} else {
 			for (var j=0; j<globbed.length; j++){
-				var inludeFilename = require('path').normalize(globbed[j]);
-				if (seenIncludes.indexOf(inludeFilename) !== -1){
-					console.error('include recursion in ' + inludeFilename);
+				var includeFilename = require('path').normalize(globbed[j]);
+				if (seenIncludes.indexOf(includeFilename) !== -1){
+					console.error('include recursion in ' + includeFilename);
 					process.exit(ERRORLEVEL_FS);
 				} else {
-					seenIncludes.push(inludeFilename);
+					seenIncludes.push(includeFilename);
 				}
 				var list;
 				try {
-					list = require('fs').readFileSync(inludeFilename, 'utf-8');
+					list = require('fs').readFileSync(includeFilename, 'utf-8');
 				} catch(e) {
-					console.error('cannot include file ' + inludeFilename);
+					console.error('cannot include file ' + includeFilename);
 					process.exit(ERRORLEVEL_FS);
 				}
 				var included = list
@@ -107,7 +107,7 @@ function unwrap(filenames, dirname){
 					.split(/[\r\n]+/)
 					.map(trimmer)
 					.filter(Boolean);
-				var unwrapped = unwrap(included, require('path').dirname(inludeFilename));
+				var unwrapped = unwrap(included, require('path').dirname(includeFilename));
 				result.push.apply(result, unwrapped);
 			}
 		}
