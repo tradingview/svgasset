@@ -1,9 +1,13 @@
 {
   "name": "svgasset",
-  "version": "0.1.0-alpha.3",
+  "version": "0.1.0-alpha.4",
   "description": "Client side inline SVG library and backend building tool",
   "author": "TradingView <admin@tradingview.com>",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/multicharts/svgasset.git"
+  },
   "dependencies": {
     "glob": "^5.0.3",
     "sax": "^0.6.1"
