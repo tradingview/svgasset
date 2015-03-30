@@ -1,10 +1,15 @@
 var SvgAsset = (function(){
+	"use strict";
 	var _code = {};
 	var _wrap;
 
 	var SvgAsset = function(name, attrs){
-		if (!_code[name]){
-			throw new Error('Asset ' + name + ' was not registered');
+		var code = _code[name];
+		if (!code){
+			code = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"></svg>';
+			if (window.console && console.error){
+				console.error('SvgAsset: "' + name + '" was not registered');
+			}
 		}
 		if (typeof attrs === 'string'){
 			var match = /^\s*(\d*)\s*x\s*(\d*)\s*$/i.exec(attrs);
@@ -22,7 +27,7 @@ var SvgAsset = (function(){
 		if (!_wrap){
 			_wrap = document.createElement('div');
 		}
-		_wrap.innerHTML = _code[name];
+		_wrap.innerHTML = code;
 		for (var i=0; i<_wrap.childNodes.length; i++){
 			var node = _wrap.childNodes[i];
 			if (node.nodeType === 1){
