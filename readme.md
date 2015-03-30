@@ -15,7 +15,7 @@ The signature is `SVGAsset(/* str */ assetName, /* optional object or str */ att
 -	`assetName` is a name of the SVG asset;
 
 -	`attrs` (optional) is a dictionary of attributes to set to element.
-	If it's a string in format "_width_ x _height_"`, it's the same as providing `{"width": ..., "height": ...}`.
+	If it's a string in format "_width_ x _height_", it's the same as providing `{"width": ..., "height": ...}`.
 
 But first you have to declare the assets themselves.
 It is done with `SvgAsset.register(/* object */ assets)`
