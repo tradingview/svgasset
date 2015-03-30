@@ -104,7 +104,7 @@ svgasset-build  @prod.txt -o svgs.js
 
 #### Example 3
 
-I want to process file in current directory, it anme starts with `@`, but it's not the list.
+I want to process file in current directory, its name starts with `@`, but it's not the list.
 
 ```
 svgasset-build  ./@icon.svg -o svgs.js
