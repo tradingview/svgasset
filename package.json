@@ -1,6 +1,6 @@
 {
   "private": true,
-  "name": "svgasset-build",
+  "name": "svgasset",
   "version": "0.1.0-alpha",
   "dependencies": {
     "glob": "^5.0.3",
