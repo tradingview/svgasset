@@ -129,7 +129,7 @@ outputStream.on('error', function(){
 
 
 var stream = svgasset(inputFilenames, {
-	writeBefore: 'SvgAsset.register(',
+	writeBefore: 'svgAsset.register(',
 	writeAfter: ');',
 });
 stream.on('error', function(error){

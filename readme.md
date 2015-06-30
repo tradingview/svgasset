@@ -1,14 +1,14 @@
-# SvgAsset
+# svgAsset
 
 A simple library for inserting inline SVG into DOM. Comes with the builder!
 
 ## Client side
 
-Include `browser/svgasset.svg` somewhere in the page. `SvgAsset` function appears in the global scope.
+Include `browser/svgasset.svg` somewhere in the page. `svgAsset` function appears in the global scope.
 
 ### Client side API
 
-Calling `SvgAsset()` return a SVG DOM element that can be used in any way you want.
+Calling `svgAsset()` return a SVG DOM element that can be used in any way you want.
 
 The signature is `SVGAsset(/* str */ assetName, /* optional object or str */ attrs)`.
 
@@ -18,7 +18,7 @@ The signature is `SVGAsset(/* str */ assetName, /* optional object or str */ att
 	If it's a string in format "_width_ x _height_", it's the same as providing `{"width": ..., "height": ...}`.
 
 But first you have to declare the assets themselves.
-It is done with `SvgAsset.register(/* object */ assets)`
+It is done with `svgAsset.register(/* object */ assets)`
 
 -	`assets` is a dictionary. Keys are asset names and values are corresponding HTML (SVG) strings.
 

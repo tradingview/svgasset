@@ -1,14 +1,16 @@
-var SvgAsset = (function(){
+/*jshint globalstrict:false*/
+
+var svgAsset = (function(){
 	"use strict";
 	var _code = {};
 	var _wrap;
 
-	var SvgAsset = function(name, attrs){
+	var svgAsset = function(name, attrs){
 		var code = _code[name];
 		if (!code){
 			code = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"></svg>';
 			if (window.console && console.error){
-				console.error('SvgAsset: "' + name + '" was not registered');
+				console.error('svgAsset: "' + name + '" was not registered');
 			}
 		}
 		if (typeof attrs === 'string'){
@@ -42,11 +44,11 @@ var SvgAsset = (function(){
 		}
 	};
 
-	SvgAsset.register = function(dict){
+	svgAsset.register = function(dict){
 		for (var i in dict){
 			_code[i] = dict[i].toString();
 		}
 	};
 
-	return SvgAsset;
+	return svgAsset;
 })();
