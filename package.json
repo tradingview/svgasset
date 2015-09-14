@@ -1,6 +1,6 @@
 {
   "name": "svgasset",
-  "version": "0.1.0-rc.1",
+  "version": "0.1.0-rc.2",
   "description": "Client side inline SVG library and backend building tool",
   "author": "TradingView <admin@tradingview.com>",
   "license": "MIT",
