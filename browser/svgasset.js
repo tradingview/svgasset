@@ -1,18 +1,13 @@
 /*jshint globalstrict:false*/
 
+"use strict";
+
 var svgAsset = (function(){
-	"use strict";
 	var _code = {};
 	var _wrap;
 
 	var svgAsset = function(name, attrs){
-		var code = _code[name];
-		if (!code){
-			code = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"></svg>';
-			if (window.console && console.error){
-				console.error('svgAsset: "' + name + '" was not registered');
-			}
-		}
+		var code = svgAsset.code(name);
 		if (typeof attrs === 'string'){
 			var match = /^\s*(\d*)\s*x\s*(\d*)\s*$/i.exec(attrs);
 			if (!match){
@@ -50,5 +45,20 @@ var svgAsset = (function(){
 		}
 	};
 
+	svgAsset.code = function(name){
+		var code = _code[name];
+		if (!code){
+			code = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"></svg>';
+			if (window.console && console.error){
+				console.error('svgAsset: "' + name + '" was not registered');
+			}
+		}
+		return code;
+	};
+
 	return svgAsset;
 })();
+
+if (typeof module != 'undefined' && !!module && !!module.exports) {
+	module.exports = svgAsset;
+}
